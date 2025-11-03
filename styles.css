@@ -1,5 +1,5 @@
 :root {
-    --bg-color: #000000f1;
+    --bg-color: #000;
     --accent: #ff3b3b;
 }
 
@@ -51,7 +51,7 @@ section {
     align-items: center;
     justify-content: center;
     background:
-        url("assets/images/logodevops\ \(copy\ 2\).png") center/contain no-repeat;
+        url("assets/images/devops-only.png") center/contain no-repeat;
     background-size: contain;
     max-width: 800px;
     max-height: 900px;
@@ -83,6 +83,7 @@ section {
     display: flex;
     flex-direction: column;
     flex: 1;
+    align-self: center;
     align-items: center;
     justify-content: center;
     max-width: 450px;
@@ -90,13 +91,56 @@ section {
     margin-bottom: 5%;
 }
 
+.border-wrapper {
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: autoyy;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.border::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(#4f3bff, #a701e9);
+    animation: spin 3s linear infinite;
+    z-index: -1;
+}
+
+.border::after {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    background: #000000f1;
+    z-index: -1;
+    border-radius: 50%;
+}
+
 #perfil {
     width: 100%;
     max-width: 400px;
     height: auto;
     align-self: center;
-    border-bottom-right-radius: 40%;
-    border-bottom-left-radius: 40%;
+    border-radius: 50%;
     object-fit: cover;
 }
 
@@ -139,8 +183,8 @@ section {
 }
 
 .item {
-    transform: skewY(-4.5deg) translateX(200px);
     /* Contra-inclinar para texto recto */
+    transform: skewY(-4.5deg) translateX(200px);
     opacity: 0;
     transition: all 0.6s ease-out;
 }
