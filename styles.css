@@ -155,6 +155,8 @@ section {
     cursor: pointer;
     transition: 0.3s;
     box-shadow: 0 8px 32px 0 rgba(255, 59, 59, 0.2);
+    font-family: monospace;
+    font-size: 20px;
 }
 
 .btn:hover {
@@ -166,19 +168,29 @@ section {
 .ct {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 2rem;
 }
 
+.contenido {
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+
+
 .list {
     display: flex;
     justify-content: center;
-    gap: 4rem;
+    gap: 5rem;
     background-color: #3a3a3a;
     flex-wrap: wrap;
     transform: skewY(4.5deg);
     overflow: hidden;
+    margin-bottom: 100px;
 }
 
 .item {
@@ -186,6 +198,27 @@ section {
     transform: skewY(-4.5deg) translateX(200px);
     opacity: 0;
     transition: all 0.6s ease-out;
+}
+
+.item:hover img {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 20px var(--accent)) drop-shadow(0 0 40px var(--accent)) brightness(1.2);
+}
+
+/* Efecto de brillo de fondo (opcional) */
+.item::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    filter: blur(30px);
+}
+
+.item:hover::before {
+    opacity: 0.4;
 }
 
 .item img {
@@ -220,6 +253,21 @@ section {
 .list.passed .item {
     transform: skewY(-4.5deg) translateX(-200px);
     opacity: 0;
+}
+
+
+h1 {
+    text-align: justify;
+    font-family: monospace;
+}
+
+
+p {
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: justify;
+    font-family: monospace;
+    font-size: 20px;
 }
 
 /* Media queries para responsividad */
