@@ -317,6 +317,11 @@ section {
     #perfil {
         max-width: 320px;
     }
+
+    .item img {
+        width: 100px;
+        height: 100px;
+    }
 }
 
 /* Tablets pequeñas */
@@ -354,10 +359,9 @@ section {
         gap: 2rem;
     }
 
-    .item {
-        width: 50px;
-        height: 50px;
-        ;
+    .item img {
+        width: 80px;
+        height: 80px;
     }
 }
 
@@ -396,9 +400,8 @@ section {
         gap: 1rem;
     }
 
-    .item {
+    .item img {
         width: 50px;
         height: 50px;
-        ;
     }
 }
